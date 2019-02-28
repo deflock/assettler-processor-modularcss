@@ -1,0 +1,67 @@
+{
+  "name": "@deflock/assettler-processor-modularcss",
+  "version": "0.1.0",
+  "license": "MIT",
+  "homepage": "https://github.com/deflock/assettler-processor-modularcss",
+  "repository": "deflock/assettler-processor-modularcss",
+  "main": "lib/processor.js",
+  "module": "src/processor.mjs",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "scripts": {
+    "clean": "rimraf lib",
+    "compile": "babel src --out-dir lib",
+    "recompile": "yarn clean && yarn compile",
+    "pretest": "yarn recompile",
+    "test": "jest",
+    "prepublishOnly": "yarn test"
+  },
+  "dependencies": {
+    "@assettler/core": "^0.4.0",
+    "@deflock/postcss-debug": "^0.1.0",
+    "@deflock/postcss-convert-inline-comments": "^0.1.0",
+    "@deflock/postcss-image-inline": "^0.1.0",
+    "@deflock/postcss-image-size": "^0.1.0",
+    "@deflock/postcss-math": "^0.1.0",
+    "@deflock/postcss-optimize-inline-svg": "^0.1.0",
+    "@deflock/postcss-use-context-plugin": "^0.1.0",
+    "@modular-css/processor": "^22.1.4",
+    "autoprefixer": "^9.0.2",
+    "file-type": "^10.5.0",
+    "is-svg": "^3.0.0",
+    "postcss": "^7.0.2",
+    "postcss-advanced-variables": "^3.0.0",
+    "postcss-atroot": "^0.1.3",
+    "postcss-colormin": "^4.0.1",
+    "postcss-color-function": "^4.0.1",
+    "postcss-color-hex-alpha": "^5.0.2",
+    "postcss-discard-comments": "^4.0.0",
+    "postcss-discard-empty": "^4.0.0",
+    "postcss-functions": "^3.0.0",
+    "postcss-hexrgba": "^1.0.1",
+    "postcss-import": "^12.0.0",
+    "postcss-inline-svg": "^3.1.1",
+    "postcss-media-minmax": "^4.0.0",
+    "postcss-mixins": "^6.0.1",
+    "postcss-nested": "^4.1.0",
+    "postcss-nested-ancestors": "^2.0.0",
+    "postcss-normalize-charset": "^4.0.0",
+    "postcss-normalize-whitespace": "^4.0.0",
+    "postcss-scss": "^2.0.0",
+    "postcss-selector-parser": "^5.0.0-rc.4",
+    "postcss-value-parser": "^3.3.1",
+    "svgo": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "cross-env": "^5.2.0",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.3"
+  }
+}
