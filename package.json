@@ -1,6 +1,6 @@
 {
   "name": "@deflock/assettler-processor-modularcss",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "homepage": "https://github.com/deflock/assettler-processor-modularcss",
   "repository": "deflock/assettler-processor-modularcss",
@@ -21,7 +21,7 @@
     "prepublishOnly": "yarn test"
   },
   "dependencies": {
-    "@assettler/core": "^0.4.0",
+    "@assettler/core": "0.x",
     "@deflock/postcss-debug": "^0.1.0",
     "@deflock/postcss-convert-inline-comments": "^0.1.0",
     "@deflock/postcss-image-inline": "^0.1.0",
