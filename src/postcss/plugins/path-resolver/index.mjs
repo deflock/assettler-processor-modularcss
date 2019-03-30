@@ -77,7 +77,8 @@ function resolvePath(value, decl, options) {
         return null;
     }
 
-    return pathResolver.relative(value, declfile, null, {
+    return pathResolver.relative(value, declfile, {
+        aliasType: null,
         isFromDir: false,
         prependDot: true,
     });

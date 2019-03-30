@@ -269,9 +269,10 @@ export default class Processor extends GenericProcessor {
             //     timestamp = Date.now();
             // }),
             postcssImport({
-                resolve: (id, importBasedir) => this.pathResolver.absolute(
-                    id, importBasedir, 'css', {isFromDir: true}
-                ) || id,
+                resolve: (id, importBasedir) => this.pathResolver.absolute(id, importBasedir, {
+                    aliasType: 'css',
+                    isFromDir: true,
+                }) || id,
             }),
             postcssConvertInlineComments(),
             // Base functions
@@ -464,7 +465,10 @@ export default class Processor extends GenericProcessor {
 
             resolvers: [
                 (srcfile, file) => {
-                    const absolute = this.pathResolver.absolute(file, srcfile, 'css', {isFromDir: false});
+                    const absolute = this.pathResolver.absolute(file, srcfile, {
+                        aliasType: 'css',
+                        isFromDir: false,
+                    });
                     if (!nodefs.existsSync(absolute) || !nodefs.statSync(absolute).isFile()) {
                         throw new Error(
                             `File cannot be found\n\nFrom: ${srcfile}\nFile: ${file}\nResolved to: ${absolute}`
